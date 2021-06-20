@@ -1,0 +1,22 @@
+{
+  "name": "colormapfcn",
+  "version": "0.0.1",
+  "description": "A tool to create colormaps that you can use in e.g. charts",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juissi999/colormapfcn.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juissi999/colormapfcn/issues"
+  },
+  "homepage": "https://github.com/juissi999/colormapfcn#readme"
+}
