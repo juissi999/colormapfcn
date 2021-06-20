@@ -26,6 +26,9 @@
       const newColor = cmapFcn.getValue(i)
       newDiv.innerHTML = newColor.r + ',' + newColor.g + ',' + newColor.b
 
+      newDiv.style.display = "inline-block"
+      newDiv.style.height = '5rem'
+      newDiv.style.width = '5rem'
       newDiv.style.backgroundColor = `rgb(${newColor.r},${newColor.g},${newColor.b})`;
       colorsHandle.appendChild(newDiv)
     }
