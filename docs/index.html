@@ -9,18 +9,37 @@
 </head>
 
 <body>
-  Hello world.
-  <div id="colors">
+  <h1>Colormapfcn</h1>
+
+  <div style="margin:25px 0px;">
+    Create a function to produce endless rgb-colors that are non-overlapping (until all colors used).
   </div>
+
+  function:
+  <div id="fcn"></div>
+
+  <div id="colors" style="margin:25px 0px;">
+  </div>
+
+
 
   <script src="../index.js"></script>
 
   <script type="text/javascript">
-    const howmany = 10;
-    cmapFcn.init(4, 15, 80, 337, 491, 1721)
+    const howmany = 101;
+    let rstart = 4
+    let gstart = 15
+    let bstart = 80
+    let rincrement = 31
+    let gincrement = 199
+    let bincrement = 7
+
+    cmapFcn.init(rstart, gstart, bstart, rincrement, gincrement, bincrement)
+
+    document.getElementById('fcn').innerHTML =
+      `rgb((${rstart}+${rincrement}*index)%256,(${gstart}+${gincrement}*index)%256,(${bstart}+${bincrement}*index)%256)`
 
     const colorsHandle = document.getElementById('colors')
-    colorsHandle.innerHTML = "colors displayed here"
     for (let i = 0; i < howmany; i++) {
       const newDiv = document.createElement('DIV')
       const newColor = cmapFcn.getValue(i)
