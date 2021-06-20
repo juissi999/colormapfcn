@@ -7,6 +7,16 @@ export default {
     this.gincrement = gincrement
     this.bincrement = bincrement
   },
+  getParameters: function () {
+    return {
+      rstart: this.rstart,
+      gstart: this.gstart,
+      bstart: this.bstart,
+      rincrement: this.rincrement,
+      gincrement: this.gincrement,
+      bincrement: this.bincrement
+    }
+  },
   getValue: function (index) {
     return {
       r: (this.rstart + this.rincrement * index) % 256,

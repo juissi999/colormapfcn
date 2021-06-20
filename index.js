@@ -1,21 +1,18 @@
 import cmapFcn from './src/colormapfcn'
 
-const howmany = 101
-let rstart = 4
-let gstart = 15
-let bstart = 80
-let rincrement = 31
-let gincrement = 199
-let bincrement = 7
+const howmany = 100
 
 const init = () => {
   //cmapFcn.init(rstart, gstart, bstart, rincrement, gincrement, bincrement)
   cmapFcn.randStartLocs()
   cmapFcn.randIncrements()
+  const parameters = cmapFcn.getParameters()
 
   document.getElementById(
     'fcn'
-  ).innerHTML = `rgb((${rstart}+${rincrement}*index)%256,(${gstart}+${gincrement}*index)%256,(${bstart}+${bincrement}*index)%256)`
+  ).innerHTML = `rgb((${parameters.rstart}+${parameters.rincrement}*index)%256,
+                     (${parameters.gstart}+${parameters.gincrement}*index)%256,
+                     (${parameters.bstart}+${parameters.bincrement}*index)%256)`
 
   const colorsHandle = document.getElementById('colors')
   colorsHandle.innerHTML = ''
