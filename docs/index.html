@@ -17,7 +17,7 @@
 
   <script type="text/javascript">
     const howmany = 10;
-    cmapFcn.init(4, 15, 80, 3, 7, 17)
+    cmapFcn.init(4, 15, 80, 337, 491, 1721)
 
     const colorsHandle = document.getElementById('colors')
     colorsHandle.innerHTML = "colors displayed here"
@@ -25,6 +25,8 @@
       const newDiv = document.createElement('DIV')
       const newColor = cmapFcn.getValue(i)
       newDiv.innerHTML = newColor.r + ',' + newColor.g + ',' + newColor.b
+
+      newDiv.style.backgroundColor = `rgb(${newColor.r},${newColor.g},${newColor.b})`;
       colorsHandle.appendChild(newDiv)
     }
   </script>
