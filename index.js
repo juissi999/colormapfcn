@@ -1,11 +1,14 @@
 import cmapFcn from './src/colormapfcn'
 
 const howmany = 100
+let showRGBcode = false
 
-const init = () => {
+const init = (recalculate) => {
   //cmapFcn.init(rstart, gstart, bstart, rincrement, gincrement, bincrement)
-  cmapFcn.randStartLocs()
-  cmapFcn.randIncrements()
+  if (recalculate) {
+    cmapFcn.randStartLocs()
+    cmapFcn.randIncrements()
+  }
   const parameters = cmapFcn.getParameters()
 
   document.getElementById(
@@ -19,21 +22,25 @@ const init = () => {
   for (let i = 0; i < howmany; i++) {
     const newDiv = document.createElement('DIV')
     const newColor = cmapFcn.getValue(i)
-    newDiv.innerHTML = newColor.r + ',' + newColor.g + ',' + newColor.b
+    if (showRGBcode) {
+      newDiv.innerHTML = newColor.r + ',' + newColor.g + ',' + newColor.b
+    }
 
-    newDiv.style.display = 'inline-block'
-    newDiv.style.height = '5rem'
-    newDiv.style.width = '5rem'
+    // newDiv.style.display = 'inline-block'
+    newDiv.style.height = '6rem'
+    newDiv.style.width = '6rem'
     newDiv.style.backgroundColor = `rgb(${newColor.r},${newColor.g},${newColor.b})`
     colorsHandle.appendChild(newDiv)
   }
 }
 
-init()
-const rand = () => {
-  return Math.floor(Math.random() * 256)
-}
+init(true)
 
 document.getElementById('randbutton').onclick = () => {
-  init()
+  init(true)
+}
+
+document.getElementById('showrgbutton').onclick = () => {
+  showRGBcode = !showRGBcode
+  init(false)
 }
