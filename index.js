@@ -1,5 +1,5 @@
 const cmapFcn = {
-  init: function (rstart, gstart, bstart, rincrement, gincrement, bincrement) {
+  set: function (rstart, gstart, bstart, rincrement, gincrement, bincrement) {
     this.rstart = rstart
     this.gstart = gstart
     this.bstart = bstart
@@ -13,6 +13,16 @@ const cmapFcn = {
       g: (this.gstart + this.gincrement * index) % 256,
       b: (this.bstart + this.bincrement * index) % 256
     }
+  },
+  randStartLocs: function () {
+    this.rstart = Math.floor(Math.random() * 256)
+    this.gstart = Math.floor(Math.random() * 256)
+    this.bstart = Math.floor(Math.random() * 256)
+  },
+  randIncrements: function () {
+    this.rincrement = Math.floor(Math.random() * 256)
+    this.gincrement = Math.floor(Math.random() * 256)
+    this.bincrement = Math.floor(Math.random() * 256)
   },
   rstart: 0,
   gstart: 0,
