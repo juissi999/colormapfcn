@@ -14,7 +14,15 @@
   </div>
 
   <script type="text/javascript">
-    document.getElementById('colors').innerHTML = "colors displayed here"
+    const howmany = 10;
+
+    const colorsHandle = document.getElementById('colors')
+    colorsHandle.innerHTML = "colors displayed here"
+    for (let i = 0; i < howmany; i++) {
+      const newDiv = document.createElement('DIV')
+      newDiv.innerHTML = 'test'
+      colorsHandle.appendChild(newDiv)
+    }
   </script>
 
 
